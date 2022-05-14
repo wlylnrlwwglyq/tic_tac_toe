@@ -115,17 +115,18 @@ function clickTable(e){
 	}
 	if(winner != EMPTY){
 		alert(winner == MARU ? "丸が勝ちました" : "バツが勝ちました");
-	}
-	//おける場所がない場合は引き分け
-	for(i = 0;i < 9;i++){
-		if(gameTable[i] == EMPTY){
-			break;
+	}else{
+		//おける場所がない場合は引き分け
+		if(winner == EMPTY){
+		for(i = 0;i < 9;i++){
+			if(gameTable[i] == EMPTY){
+				break;
+			}
+		}
+		if(i == 9){
+			alert("引き分けです");
 		}
 	}
-	if(i == 9){
-		alert("引き分けです");
-	}
-	
 }
 
 
